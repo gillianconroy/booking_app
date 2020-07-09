@@ -5,7 +5,7 @@ from sqlalchemy import exc, func
 from flask_cors import CORS
 from models import setup_db
 import logging
-from logging import Formatter
+from logging import Formatter, FileHandler
 from datetime import datetime, timezone, time
 import calendar
 
@@ -608,9 +608,15 @@ def create_app(test_config=None):
             "message": AuthError.error['description']
         }), AuthError.status_code
 
-
-
-
+    if not app.debug:
+    file_handler = FileHandler('error.log')
+    file_handler.setFormatter(
+        Formatter('%(asctime)s %(levelname)s: %(message)s [in %(pathname)s:%(lineno)d]')
+    )
+    app.logger.setLevel(logging.INFO)
+    file_handler.setLevel(logging.INFO)
+    app.logger.addHandler(file_handler)
+    app.logger.info('errors')
 
     return app
 
