@@ -1,0 +1,491 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 12.1
+-- Dumped by pg_dump version 12.1
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+SET default_tablespace = '';
+
+SET default_table_access_method = heap;
+
+--
+-- Name: alembic_version; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.alembic_version (
+    version_num character varying(32) NOT NULL
+);
+
+
+ALTER TABLE public.alembic_version OWNER TO postgres;
+
+--
+-- Name: class; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.class (
+    id integer NOT NULL,
+    name character varying(80),
+    code character varying(80),
+    end_date timestamp with time zone NOT NULL,
+    start_date timestamp with time zone NOT NULL,
+    created_date timestamp with time zone NOT NULL,
+    modified_date timestamp with time zone NOT NULL,
+    instructor_id integer NOT NULL
+);
+
+
+ALTER TABLE public.class OWNER TO postgres;
+
+--
+-- Name: class_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.class_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.class_id_seq OWNER TO postgres;
+
+--
+-- Name: class_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.class_id_seq OWNED BY public.class.id;
+
+
+--
+-- Name: classroom; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.classroom (
+    id integer NOT NULL,
+    name character varying(80),
+    building character varying(120),
+    floor character varying(1),
+    occupancy integer,
+    created_date timestamp with time zone NOT NULL,
+    modified_date timestamp with time zone NOT NULL
+);
+
+
+ALTER TABLE public.classroom OWNER TO postgres;
+
+--
+-- Name: classroom_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.classroom_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.classroom_id_seq OWNER TO postgres;
+
+--
+-- Name: classroom_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.classroom_id_seq OWNED BY public.classroom.id;
+
+
+--
+-- Name: hours; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.hours (
+    id integer NOT NULL,
+    day integer NOT NULL,
+    open_time time with time zone,
+    close_time time with time zone,
+    classroom_id integer NOT NULL
+);
+
+
+ALTER TABLE public.hours OWNER TO postgres;
+
+--
+-- Name: hours_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.hours_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.hours_id_seq OWNER TO postgres;
+
+--
+-- Name: hours_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.hours_id_seq OWNED BY public.hours.id;
+
+
+--
+-- Name: instructor; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.instructor (
+    id integer NOT NULL,
+    name character varying(80),
+    created_date timestamp with time zone NOT NULL,
+    modified_date timestamp with time zone NOT NULL
+);
+
+
+ALTER TABLE public.instructor OWNER TO postgres;
+
+--
+-- Name: instructor_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.instructor_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.instructor_id_seq OWNER TO postgres;
+
+--
+-- Name: instructor_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.instructor_id_seq OWNED BY public.instructor.id;
+
+
+--
+-- Name: lecture; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.lecture (
+    id integer NOT NULL,
+    name character varying,
+    class_id integer NOT NULL,
+    classroom_id integer NOT NULL,
+    start_time timestamp with time zone NOT NULL,
+    end_time timestamp with time zone NOT NULL,
+    created_date timestamp with time zone NOT NULL,
+    modified_date timestamp with time zone NOT NULL
+);
+
+
+ALTER TABLE public.lecture OWNER TO postgres;
+
+--
+-- Name: lecture_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.lecture_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.lecture_id_seq OWNER TO postgres;
+
+--
+-- Name: lecture_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.lecture_id_seq OWNED BY public.lecture.id;
+
+
+--
+-- Name: class id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.class ALTER COLUMN id SET DEFAULT nextval('public.class_id_seq'::regclass);
+
+
+--
+-- Name: classroom id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.classroom ALTER COLUMN id SET DEFAULT nextval('public.classroom_id_seq'::regclass);
+
+
+--
+-- Name: hours id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.hours ALTER COLUMN id SET DEFAULT nextval('public.hours_id_seq'::regclass);
+
+
+--
+-- Name: instructor id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.instructor ALTER COLUMN id SET DEFAULT nextval('public.instructor_id_seq'::regclass);
+
+
+--
+-- Name: lecture id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.lecture ALTER COLUMN id SET DEFAULT nextval('public.lecture_id_seq'::regclass);
+
+
+--
+-- Data for Name: alembic_version; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.alembic_version (version_num) FROM stdin;
+\.
+
+
+--
+-- Data for Name: class; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.class (id, name, code, end_date, start_date, created_date, modified_date, instructor_id) FROM stdin;
+9	Acute Care Nursing Clinical	NURS 1116	2020-04-22 20:10:25-04	2020-01-22 17:10:25-04	2020-07-07 17:31:08.182219-04	2020-07-07 17:31:08.182219-04	2
+8	Respiratory Signs	NURS 1236	2020-04-22 19:10:25-04	2020-01-22 17:10:25-04	2020-07-07 17:30:30.878853-04	2020-07-07 17:30:30.878853-04	2
+7	Acute Care Nursing Clinical	NURS 1116	2020-04-22 22:10:25-04	2020-01-22 20:10:25-04	2020-07-07 10:14:50.470046-04	2020-07-07 10:14:50.470046-04	2
+6	Health Assessment	NURS 1056	2020-12-20 11:00:00-04	2020-10-14 01:32:41-04	2020-07-07 09:45:04.470046-04	2020-07-07 09:45:08-04	2
+5	Respiratory Distress Care	NURS 9207	2020-12-20 11:00:00-04	2020-10-14 01:32:41-04	2020-07-07 09:59:26.470046-04	2020-07-07 09:59:36-04	2
+2	Photoshop Basics	PHOT 9056	2020-12-10 08:32:15-04	2020-09-14 09:32:41-04	2020-07-07 09:37:48.470046-04	2020-07-07 09:38:01-04	1
+1	Graphic Design	COMP 9595	2020-12-10 08:32:15-04	2020-09-14 09:32:41-04	2020-07-07 09:32:56.470046-04	2020-07-07 09:33:01-04	1
+3	Cardiology Nursing 1	NURS 9064	2020-12-20 10:00:00-04	2020-10-14 01:32:41-04	2020-07-01 09:00:00.470046-04	2020-07-07 09:33:01-04	2
+4	Film Studies	GHUM 1080	2020-04-24 10:44:45-04	2020-01-20 03:44:53-04	2020-07-07 09:45:04.470046-04	2020-07-07 09:45:08-04	1
+10	Canine Studies	TUCK 1003	2020-04-22 20:10:25-04	2020-02-14 00:32:41-04	2020-07-07 07:43:13.182219-04	2020-07-07 07:43:13.182219-04	1
+\.
+
+
+--
+-- Data for Name: classroom; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.classroom (id, name, building, floor, occupancy, created_date, modified_date) FROM stdin;
+1	DLS427	Daniels	4	200	2020-06-18 13:51:57.711957-04	2020-06-18 13:51:57.711957-04
+5	DLS212	Daniels	2	80	2020-07-07 09:42:31.427472-04	2020-07-07 09:42:33.427472-04
+4	GBW307	Waterfront	3	100	2020-07-07 09:41:17.389887-04	2020-07-07 09:41:23.389887-04
+3	DLS319	Daniels	3	80	2020-07-07 09:40:20.243888-04	2020-07-07 09:40:28.243888-04
+2	GBW103	Waterfront	1	50	2020-07-07 09:39:28.622938-04	2020-07-07 09:39:37.622938-04
+\.
+
+
+--
+-- Data for Name: hours; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.hours (id, day, open_time, close_time, classroom_id) FROM stdin;
+4	3	08:00:00-04	17:00:00-04	1
+5	4	08:00:00-04	17:00:00-04	1
+6	5	08:00:00-04	17:00:00-04	1
+8	0	08:00:00-04	12:00:00-04	2
+9	1	08:00:00-04	12:00:00-04	2
+10	2	08:00:00-04	12:00:00-04	2
+11	3	08:00:00-04	12:00:00-04	2
+12	4	08:00:00-04	12:00:00-04	2
+13	5	08:00:00-04	12:00:00-04	2
+7	6	08:00:00-04	17:00:00-04	1
+14	6	08:00:00-04	12:00:00-04	2
+15	0	08:00:00-04	17:00:00-04	3
+16	1	08:00:00-04	17:00:00-04	3
+17	2	08:00:00-04	17:00:00-04	3
+18	3	08:00:00-04	17:00:00-04	3
+19	4	08:00:00-04	17:00:00-04	3
+20	5	08:00:00-04	17:00:00-04	4
+21	6	08:00:00-04	17:00:00-04	4
+22	0	08:00:00-04	17:00:00-04	5
+23	1	08:00:00-04	17:00:00-04	5
+24	2	08:00:00-04	17:00:00-04	5
+25	3	08:00:00-04	17:00:00-04	5
+26	4	08:00:00-04	17:00:00-04	5
+27	5	08:00:00-04	13:00:00-04	5
+28	6	08:00:00-04	13:00:00-04	5
+2	1	08:00:00-04	17:00:00-04	1
+1	0	08:00:00-04	17:00:00-04	1
+3	2	08:00:00-04	17:00:00-04	1
+\.
+
+
+--
+-- Data for Name: instructor; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.instructor (id, name, created_date, modified_date) FROM stdin;
+1	Gillian Rose	2020-06-18 15:05:04.284949-04	2020-06-18 15:05:04.284949-04
+2	Harisson Conrad	2020-07-07 09:45:42.374949-04	2020-07-07 09:45:48.374949-04
+\.
+
+
+--
+-- Data for Name: lecture; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.lecture (id, name, class_id, classroom_id, start_time, end_time, created_date, modified_date) FROM stdin;
+4	Central Values	1	1	2020-10-22 10:25:25-04	2020-10-22 11:11:25-04	2020-07-07 10:58:25.236278-04	2020-07-07 10:58:25.236278-04
+5	Family care	3	5	2020-10-22 09:11:25-04	2020-10-22 10:11:25-04	2020-07-07 16:44:33.548042-04	2020-07-07 16:44:33.548042-04
+7	Manifested Heart Stress	3	5	2020-10-12 09:11:25-04	2020-10-12 10:11:25-04	2020-07-07 16:48:25.913296-04	2020-07-07 16:48:25.913296-04
+9	Anatomy 102	3	5	2020-10-14 09:11:25-04	2020-10-14 10:11:25-04	2020-07-07 16:52:16.288603-04	2020-07-07 16:52:16.288603-04
+10	Moral Obligation	4	4	2020-04-24 09:11:25-04	2020-04-24 10:11:25-04	2020-07-07 16:54:37.276875-04	2020-07-07 16:54:37.276875-04
+11	Old Hollywood	4	4	2020-01-30 07:11:25-04	2020-01-30 08:11:25-04	2020-07-07 16:55:14.066152-04	2020-07-07 16:55:14.066152-04
+12	Bollywood	4	4	2020-02-01 07:11:25-04	2020-02-01 08:11:25-04	2020-07-07 17:20:19.343118-04	2020-07-07 17:20:19.343118-04
+15	Korean Dramas	4	4	2020-02-01 07:00:25-04	2020-02-01 07:59:25-04	2020-07-07 19:35:59.471521-04	2020-07-07 19:35:59.471521-04
+17	Soundtrack Series	10	2	2020-03-01 07:00:25-04	2020-03-01 07:59:25-04	2020-07-07 19:44:32.771262-04	2020-07-07 19:44:32.771262-04
+3	Art on the Streets	2	1	2020-09-22 14:10:25-04	2020-09-22 15:10:25-04	2020-07-07 10:58:25.236278-04	2020-07-07 21:11:19.302863-04
+8	Heart Anatomy 101	3	5	2020-11-22 10:10:25-04	2020-11-22 11:10:25-04	2020-07-07 16:51:42.899357-04	2020-07-07 21:20:28.222253-04
+\.
+
+
+--
+-- Name: class_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.class_id_seq', 9, true);
+
+
+--
+-- Name: classroom_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.classroom_id_seq', 1, true);
+
+
+--
+-- Name: hours_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.hours_id_seq', 6, true);
+
+
+--
+-- Name: instructor_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.instructor_id_seq', 1, true);
+
+
+--
+-- Name: lecture_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.lecture_id_seq', 17, true);
+
+
+--
+-- Name: alembic_version alembic_version_pkc; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.alembic_version
+    ADD CONSTRAINT alembic_version_pkc PRIMARY KEY (version_num);
+
+
+--
+-- Name: class class_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.class
+    ADD CONSTRAINT class_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: classroom classroom_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.classroom
+    ADD CONSTRAINT classroom_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: hours hours_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.hours
+    ADD CONSTRAINT hours_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: instructor instructor_name_key; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.instructor
+    ADD CONSTRAINT instructor_name_key UNIQUE (name);
+
+
+--
+-- Name: instructor instructor_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.instructor
+    ADD CONSTRAINT instructor_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: lecture lecture_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.lecture
+    ADD CONSTRAINT lecture_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: class class_instructor_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.class
+    ADD CONSTRAINT class_instructor_id_fkey FOREIGN KEY (instructor_id) REFERENCES public.instructor(id);
+
+
+--
+-- Name: hours hours_classroom_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.hours
+    ADD CONSTRAINT hours_classroom_id_fkey FOREIGN KEY (classroom_id) REFERENCES public.classroom(id);
+
+
+--
+-- Name: lecture lecture_class_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.lecture
+    ADD CONSTRAINT lecture_class_id_fkey FOREIGN KEY (class_id) REFERENCES public.class(id);
+
+
+--
+-- Name: lecture lecture_classroom_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.lecture
+    ADD CONSTRAINT lecture_classroom_id_fkey FOREIGN KEY (classroom_id) REFERENCES public.classroom(id);
+
+
+--
+-- PostgreSQL database dump complete
+--
+
