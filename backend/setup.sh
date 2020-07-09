@@ -1,4 +1,4 @@
-export DATABASE_URL=postgresql://postgres:postgres@localhost:5432/class_scheduler
+export DATABASE_URL="postgres://jjldpcguvapzmr:5092849eaef5c7933acee57738244819dd297bfcdd34c8da34f824cecbd8bfbb@ec2-52-202-146-43.compute-1.amazonaws.com:5432/d4jj4k6vi2d5hq"
 export AUTH0_DOMAIN=fsndcs.auth0.com
 export ALGORITHMS=['RS256']
 export API_AUDIENCE=booking
