@@ -9,6 +9,10 @@ from logging import Formatter, FileHandler
 from datetime import datetime, timezone, time
 import calendar
 
+from os import path
+log_file_path = path.join(path.dirname(path.abspath(__file__)), 'log.config')
+logging.config.fileConfig(log_file_path)
+
 import json
 
 from models import *
