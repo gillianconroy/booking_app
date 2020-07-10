@@ -6,282 +6,6 @@
 	},
 	"item": [
 		{
-			"name": "Patch /Class",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"id": "980eaa25-bd72-4b3f-a649-6dc33d30165f",
-						"exec": [
-							"pm.test(\"Status code is 200\", function () {",
-							"    pm.response.to.have.status(200);",
-							"});"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"protocolProfileBehavior": {
-				"disabledSystemHeaders": {
-					"accept": true,
-					"accept-encoding": true,
-					"connection": true,
-					"host": true,
-					"user-agent": true
-				}
-			},
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlBzZmhtOVNweWZjbDE0czNBbDlERCJ9.eyJpc3MiOiJodHRwczovL2ZzbmRjcy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWViMTc1Mzg2YjY5YmMwYzEyZjczYjZjIiwiYXVkIjoiYm9va2luZyIsImlhdCI6MTU5MjMzNDI4OSwiZXhwIjoxNTkyMzQxNDg5LCJhenAiOiJOVEJyaVFiRzhJc0Rja0xTaFJDZ3ZzNkRIcXNFN0QyMiIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmNsYXNzIiwiZGVsZXRlOmNsYXNzcm9vbSIsImRlbGV0ZTppbnN0cnVjdG9yIiwiZGVsZXRlOmxlY3R1cmUiLCJnZXQ6Y2xhc3MiLCJnZXQ6Y2xhc3Nyb29tIiwiZ2V0Omluc3RydWN0b3IiLCJnZXQ6bGVjdHVyZSIsInBhdGNoOmNsYXNzIiwicGF0Y2g6Y2xhc3Nyb29tIiwicGF0Y2g6aW5zdHJ1Y3RvciIsInBhdGNoOmxlY3R1cmUiLCJwb3N0OmNsYXNzIiwicG9zdDpjbGFzc3Jvb20iLCJwb3N0Omluc3RydWN0b3IiLCJwb3N0OmxlY3R1cmUiXX0.gwP_AR5Sj2em143XKJPYWt52oaPfw2fENWEFirl_ReznHIfWlee-m588T8nGtqufFo9Larh_mXaIjCaZorr4wXEOvt-c5zCXLlt4GqktOA5zV4q3fWSpDK5SyLcUCWlv-rLg6F3L9hFVTQSSu9AaP1WgpygC7mSPDm_sQrb0nWxwtSFIXH-1O5Lgus88fkMnhohq32qVdRaXUinpMrv9GGCVia9YZoeTCmAuHjdFnhFjRxeih9_Kx7GR_RxOkhScW2H8_Yj7yatG53P7efyzXHOn_rKD3EGiBUYBXI7XLO0KMnEmvQ9JGSSHHcBAbKDWRByZLWfHqH_u0GQBrNjmtA",
-							"type": "string"
-						}
-					]
-				},
-				"method": "PATCH",
-				"header": [
-					{
-						"key": "Authorization",
-						"type": "text",
-						"value": "Bearer alksdjf",
-						"disabled": true
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n\t\"name\": \"Gillian's smart API course 2.0\",\n\t\"code\": \"GRC127\",\n\t\"start_date\": \"2018-10-22 19:10:25-07\",\n\t\"end_date\": \"2019-01-22 19:10:25-07\",\n\t\"instructor_id\": 1\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:5000/class/2",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "5000",
-					"path": [
-						"class",
-						"2"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Post /Class",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"id": "980eaa25-bd72-4b3f-a649-6dc33d30165f",
-						"exec": [
-							"pm.test(\"Status code is 200\", function () {",
-							"    pm.response.to.have.status(200);",
-							"});"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"protocolProfileBehavior": {
-				"disabledSystemHeaders": {
-					"accept": true,
-					"accept-encoding": true,
-					"connection": true,
-					"host": true,
-					"user-agent": true
-				}
-			},
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlBzZmhtOVNweWZjbDE0czNBbDlERCJ9.eyJpc3MiOiJodHRwczovL2ZzbmRjcy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWViMTc1Mzg2YjY5YmMwYzEyZjczYjZjIiwiYXVkIjoiYm9va2luZyIsImlhdCI6MTU5NDE1MjY4MywiZXhwIjoxNTk0MTU5ODgzLCJhenAiOiJOVEJyaVFiRzhJc0Rja0xTaFJDZ3ZzNkRIcXNFN0QyMiIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmNsYXNzIiwiZGVsZXRlOmNsYXNzcm9vbSIsImRlbGV0ZTppbnN0cnVjdG9yIiwiZGVsZXRlOmxlY3R1cmUiLCJnZXQ6Y2xhc3MiLCJnZXQ6Y2xhc3Nyb29tIiwiZ2V0Omluc3RydWN0b3IiLCJnZXQ6bGVjdHVyZSIsInBhdGNoOmNsYXNzIiwicGF0Y2g6Y2xhc3Nyb29tIiwicGF0Y2g6aW5zdHJ1Y3RvciIsInBhdGNoOmxlY3R1cmUiLCJwb3N0OmNsYXNzIiwicG9zdDpjbGFzc3Jvb20iLCJwb3N0Omluc3RydWN0b3IiLCJwb3N0OmxlY3R1cmUiXX0.PDpvk6wPcIdQD9QSvyXS8baXgH2bCKTn_diRQQFX0IZhPafX47b17FHWSDBzLQcbDaQ3V1qpdfo1S3_CUb2CdxYMUDCgsR86EiEcf6A2p3TM6s62DtRh2tm6-UQhykcsgpMKA23TLr6Cm6YEjYPz5u4veHsGO03XXN-jCpAmhbdzducIQVTu5eHdc_EwIy4jjGndnlUBTJ9BJgjd5Ed2UcGK8C3ncuyDXeUx-03dam-tsO9cEEOd1vkkwUzDvPE5Y-OryltjjxBqY5rOaydM4KNAKF2YMPv2LsKPKebkNgqSkltKptbGYICOBJ34Hjwctw3VLqqRsH5T5WdmOdxByA",
-							"type": "string"
-						}
-					]
-				},
-				"method": "POST",
-				"header": [
-					{
-						"key": "Authorization",
-						"type": "text",
-						"value": "Bearer alksdjf",
-						"disabled": true
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n\t\"name\": \"Acute Care Nursing Clinical\",\n\t\"code\": \"NURS 1116\",\n\t\"start_date\": \"2020-01-22 19:10:25-04\",\n\t\"end_date\": \"2020-04-22 19:10:25-04\",\n\t\"instructor_id\": 2\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:5000/class/add",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "5000",
-					"path": [
-						"class",
-						"add"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Delete /Class",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"id": "980eaa25-bd72-4b3f-a649-6dc33d30165f",
-						"exec": [
-							"pm.test(\"Status code is 200\", function () {",
-							"    pm.response.to.have.status(200);",
-							"});"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"protocolProfileBehavior": {
-				"disabledSystemHeaders": {
-					"accept": true,
-					"accept-encoding": true,
-					"connection": true,
-					"host": true,
-					"user-agent": true
-				}
-			},
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlBzZmhtOVNweWZjbDE0czNBbDlERCJ9.eyJpc3MiOiJodHRwczovL2ZzbmRjcy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWViMTc1Mzg2YjY5YmMwYzEyZjczYjZjIiwiYXVkIjoiYm9va2luZyIsImlhdCI6MTU5MTc5NjgyMiwiZXhwIjoxNTkxODA0MDIyLCJhenAiOiJOVEJyaVFiRzhJc0Rja0xTaFJDZ3ZzNkRIcXNFN0QyMiIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmNsYXNzIiwiZGVsZXRlOmNsYXNzcm9vbSIsImRlbGV0ZTpsZWN0dXJlIiwiZ2V0OmNsYXNzIiwiZ2V0OmNsYXNzcm9vbSIsImdldDpsZWN0dXJlIiwicGF0Y2g6Y2xhc3MiLCJwYXRjaDpjbGFzc3Jvb20iLCJwYXRjaDpsZWN0dXJlIiwicG9zdDpjbGFzcyIsInBvc3Q6Y2xhc3Nyb29tIiwicG9zdDpsZWN0dXJlIl19.c2ALorDJjaiDB9-lJCoThtxbG_lLs7eZZ_n-EwIP5-i8H_cUPSvU550BowW3ZDBZ0otmyO7zo6mLbymMKdwOL5d3elNfik4RwJFgpEE69xY11ytQLDaAhwo6lHBKu41oqZYUgCDZgRnxqDqNLSQXQ91qnz8ipb_PxdoCTUb4j1rxl2QzDMgEIEOY80k75aLs4OyR6WA1aKDr1ZtkTwwP-bwd77FdTW0rOJwF373oqVK2NKuyBDXuKgd2GJmaMVdCcBDJYvZOwRugRgqTHAi4E9kSG8OVQs4nXAOZ2I-83u_7QONVo6FXQRkB8nseP6CfAXT8RhG6obovOkEhAuTmeA",
-							"type": "string"
-						}
-					]
-				},
-				"method": "DELETE",
-				"header": [
-					{
-						"key": "Authorization",
-						"type": "text",
-						"value": "Bearer alksdjf",
-						"disabled": true
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:5000/class/23",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "5000",
-					"path": [
-						"class",
-						"23"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get /Class",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"id": "980eaa25-bd72-4b3f-a649-6dc33d30165f",
-						"exec": [
-							"pm.test(\"Status code is 200\", function () {",
-							"    pm.response.to.have.status(200);",
-							"});"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true,
-				"disabledSystemHeaders": {
-					"accept": true,
-					"accept-encoding": true,
-					"connection": true,
-					"host": true,
-					"user-agent": true
-				}
-			},
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlBzZmhtOVNweWZjbDE0czNBbDlERCJ9.eyJpc3MiOiJodHRwczovL2ZzbmRjcy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWViMTc1Mzg2YjY5YmMwYzEyZjczYjZjIiwiYXVkIjoiYm9va2luZyIsImlhdCI6MTU5MTg5NTkwOSwiZXhwIjoxNTkxOTAzMTA5LCJhenAiOiJOVEJyaVFiRzhJc0Rja0xTaFJDZ3ZzNkRIcXNFN0QyMiIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmNsYXNzIiwiZGVsZXRlOmNsYXNzcm9vbSIsImRlbGV0ZTpsZWN0dXJlIiwiZ2V0OmNsYXNzIiwiZ2V0OmNsYXNzcm9vbSIsImdldDpsZWN0dXJlIiwicGF0Y2g6Y2xhc3MiLCJwYXRjaDpjbGFzc3Jvb20iLCJwYXRjaDpsZWN0dXJlIiwicG9zdDpjbGFzcyIsInBvc3Q6Y2xhc3Nyb29tIiwicG9zdDpsZWN0dXJlIl19.HGBrS-YlkD4BjNNuku1GkK6p0Mh1CLwx9rkl1A5L--s68sAqf-NzplGis2hpEwQg6G_5H2DCrElrs_ZbCCnDBDpLlu4gidxK1p5fI1_ZtEWuF_tIml6YRwyneavIHR7ojT2Gna0RjXzMnAtazTzFUc69lv38AX4MfKGRJjGJl68iau-gERNM243JN8mpf-klOoDdwg4wx1vqblSYgd9d3QWUGK6BIyd_0kJ3BHkfPVZWZM9G22t5HmJjIzNzAkVI1EZUM_-KhJKoDe4z3Abq1CyOqsSX4DSGqxWLDs__UNgBKrL7Tf1mRQC4zULNyFMZF8EkW6ZMN32PSc2NND8j-g",
-							"type": "string"
-						}
-					]
-				},
-				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"type": "text",
-						"value": "Bearer alksdjf",
-						"disabled": true
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:5000/class",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "5000",
-					"path": [
-						"class"
-					]
-				}
-			},
-			"response": []
-		},
-		{
 			"name": "Get /Lecture",
 			"event": [
 				{
@@ -303,7 +27,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlBzZmhtOVNweWZjbDE0czNBbDlERCJ9.eyJpc3MiOiJodHRwczovL2ZzbmRjcy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWViMTc1Mzg2YjY5YmMwYzEyZjczYjZjIiwiYXVkIjoiYm9va2luZyIsImlhdCI6MTU5NDEzMTExOCwiZXhwIjoxNTk0MTM4MzE4LCJhenAiOiJOVEJyaVFiRzhJc0Rja0xTaFJDZ3ZzNkRIcXNFN0QyMiIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmNsYXNzIiwiZGVsZXRlOmNsYXNzcm9vbSIsImRlbGV0ZTppbnN0cnVjdG9yIiwiZGVsZXRlOmxlY3R1cmUiLCJnZXQ6Y2xhc3MiLCJnZXQ6Y2xhc3Nyb29tIiwiZ2V0Omluc3RydWN0b3IiLCJnZXQ6bGVjdHVyZSIsInBhdGNoOmNsYXNzIiwicGF0Y2g6Y2xhc3Nyb29tIiwicGF0Y2g6aW5zdHJ1Y3RvciIsInBhdGNoOmxlY3R1cmUiLCJwb3N0OmNsYXNzIiwicG9zdDpjbGFzc3Jvb20iLCJwb3N0Omluc3RydWN0b3IiLCJwb3N0OmxlY3R1cmUiXX0.hH0I2O87PTLp-au5KcJ3hHI3H41oiiVDu0L-kEz_MUYQt07KkNE6fqeKZ7zFWqGn9QgwPfVqJitdin6jM7RyXqm4ds6yQsAJOeUivXmw5txME0LlFO4XpSLhqaSEtrHwWwq_r6AGUdYq2963hWe-Fo6mXhWSlDuU2-ZUSRwod6dA-2U9Tc1f2xfeijX6L6aP71z9j0Tjmeyl_W5JLIlhXzO8BMH8fCEqPxQK-8-hDwD_hpr44srtVC9cX8pkgpo1hJaWCanwtWDW4KLmEnl1hiOTljwrdS4hogiOgYxvRo2XmITel4LWD80GKphlhBKUDXnKSOCB0xgTZGaDrS0Ixg",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlBzZmhtOVNweWZjbDE0czNBbDlERCJ9.eyJpc3MiOiJodHRwczovL2ZzbmRjcy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWViMTc1Mzg2YjY5YmMwYzEyZjczYjZjIiwiYXVkIjoiYm9va2luZyIsImlhdCI6MTU5NDE2NDg4NCwiZXhwIjoxNTk0MTcyMDg0LCJhenAiOiJOVEJyaVFiRzhJc0Rja0xTaFJDZ3ZzNkRIcXNFN0QyMiIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmNsYXNzIiwiZGVsZXRlOmNsYXNzcm9vbSIsImRlbGV0ZTppbnN0cnVjdG9yIiwiZGVsZXRlOmxlY3R1cmUiLCJnZXQ6Y2xhc3MiLCJnZXQ6Y2xhc3Nyb29tIiwiZ2V0Omluc3RydWN0b3IiLCJnZXQ6bGVjdHVyZSIsInBhdGNoOmNsYXNzIiwicGF0Y2g6Y2xhc3Nyb29tIiwicGF0Y2g6aW5zdHJ1Y3RvciIsInBhdGNoOmxlY3R1cmUiLCJwb3N0OmNsYXNzIiwicG9zdDpjbGFzc3Jvb20iLCJwb3N0Omluc3RydWN0b3IiLCJwb3N0OmxlY3R1cmUiXX0.nt7kwRFkrQHh4xhK4TJ_6Ig8JYm3unYebJGIvuXGygeMmilzm5HIzzRspHcD_fA1WSp7npKsQpNktwY7mUl4qGQ5c4BZPBPSt7ZHkIcEb4e_Y_8Gnp2UfMisCx4JfaGSQAaxK3ojLroO9tgq9vlOHEEyWkwEwWJkeRDqTR3F3UUXmVR9iIOVnnmf-h3Sz4dkC1MYUQYeyETAx2V9mhwspZYqZDWgnObV0la1mFOz-5bWlBUDh_ja0tRLKYUZrFEvns6sRKOwX-C2L1hAEK_bk_eNTPC1xearxUdCQsHPsPJFRk5NNaxqZNHG9KBGOmOjC9tLzgQSf7M-vNKaZ_FWiw",
 							"type": "string"
 						}
 					]
@@ -332,7 +56,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlBzZmhtOVNweWZjbDE0czNBbDlERCJ9.eyJpc3MiOiJodHRwczovL2ZzbmRjcy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWViMTc1Mzg2YjY5YmMwYzEyZjczYjZjIiwiYXVkIjoiYm9va2luZyIsImlhdCI6MTU5NDE1MjY4MywiZXhwIjoxNTk0MTU5ODgzLCJhenAiOiJOVEJyaVFiRzhJc0Rja0xTaFJDZ3ZzNkRIcXNFN0QyMiIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmNsYXNzIiwiZGVsZXRlOmNsYXNzcm9vbSIsImRlbGV0ZTppbnN0cnVjdG9yIiwiZGVsZXRlOmxlY3R1cmUiLCJnZXQ6Y2xhc3MiLCJnZXQ6Y2xhc3Nyb29tIiwiZ2V0Omluc3RydWN0b3IiLCJnZXQ6bGVjdHVyZSIsInBhdGNoOmNsYXNzIiwicGF0Y2g6Y2xhc3Nyb29tIiwicGF0Y2g6aW5zdHJ1Y3RvciIsInBhdGNoOmxlY3R1cmUiLCJwb3N0OmNsYXNzIiwicG9zdDpjbGFzc3Jvb20iLCJwb3N0Omluc3RydWN0b3IiLCJwb3N0OmxlY3R1cmUiXX0.PDpvk6wPcIdQD9QSvyXS8baXgH2bCKTn_diRQQFX0IZhPafX47b17FHWSDBzLQcbDaQ3V1qpdfo1S3_CUb2CdxYMUDCgsR86EiEcf6A2p3TM6s62DtRh2tm6-UQhykcsgpMKA23TLr6Cm6YEjYPz5u4veHsGO03XXN-jCpAmhbdzducIQVTu5eHdc_EwIy4jjGndnlUBTJ9BJgjd5Ed2UcGK8C3ncuyDXeUx-03dam-tsO9cEEOd1vkkwUzDvPE5Y-OryltjjxBqY5rOaydM4KNAKF2YMPv2LsKPKebkNgqSkltKptbGYICOBJ34Hjwctw3VLqqRsH5T5WdmOdxByA",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlBzZmhtOVNweWZjbDE0czNBbDlERCJ9.eyJpc3MiOiJodHRwczovL2ZzbmRjcy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWViMTc1Mzg2YjY5YmMwYzEyZjczYjZjIiwiYXVkIjoiYm9va2luZyIsImlhdCI6MTU5NDMzNjUyMCwiZXhwIjoxNTk0MzQzNzIwLCJhenAiOiJOVEJyaVFiRzhJc0Rja0xTaFJDZ3ZzNkRIcXNFN0QyMiIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmxlY3R1cmUiLCJnZXQ6YWxsbGVjdHVyZSIsImdldDpjbGFzc3Jvb20iLCJnZXQ6bGVjdHVyZSIsInBhdGNoOmxlY3R1cmUiLCJwb3N0OmxlY3R1cmUiXX0.41GkquA07-CY2rMvV1P4tOmKVnGv20v19IccmDycJy_gT6pcc3cfby8Y7STjUcXD2EohsTMNrWBVOWSQfVcESccvPCiOIDoQcxnSBInmCgZxZyNrCfnKdiJVp2s685yeR3gkU49S8Q2VH8Sr18pEW7gdPy2p6Y0F14avqRLx5BON05nKe6nMNp6grKqUpJ4ni2YLh0XYQT-eRX3uDASfYcrW_-ZNkJ6KUUyRgq4K1xrVvgGoqVh_ZEPODwpiGKilkBUzU_H_QgnHOxqJZK_PnYFBwa6xYWp44aAy28r5NObe0-J5KV6qlj91VLlI1ZnA3zyl3G2YC7tX6vNfYPKWWg",
 							"type": "string"
 						}
 					]
@@ -341,7 +65,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"name\": \"Old Hollywood\",\n\t\"class_id\": 4,\n    \"classroom_id\": 4,\n\t\"start_time\": \"2020-01-30 6:11:25-07\",\n\t\"end_time\": \"2020-01-30 7:11:25-07\"\n}",
+					"raw": "{\n\t\"name\": \"Wes Anderson Color Usage\",\n\t\"class_id\": 10,\n    \"classroom_id\": 2,\n\t\"start_time\": \"2020-03-01 8:00:25-04\",\n\t\"end_time\": \"2020-03-01 8:59:25-04\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -349,12 +73,13 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:5000/lecture/add",
-					"protocol": "http",
+					"raw": "https://class-scheduler-booking-app.herokuapp.com/lecture/add",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"class-scheduler-booking-app",
+						"herokuapp",
+						"com"
 					],
-					"port": "5000",
 					"path": [
 						"lecture",
 						"add"
@@ -371,7 +96,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlBzZmhtOVNweWZjbDE0czNBbDlERCJ9.eyJpc3MiOiJodHRwczovL2ZzbmRjcy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWViMTc1Mzg2YjY5YmMwYzEyZjczYjZjIiwiYXVkIjoiYm9va2luZyIsImlhdCI6MTU5MjMzNDI4OSwiZXhwIjoxNTkyMzQxNDg5LCJhenAiOiJOVEJyaVFiRzhJc0Rja0xTaFJDZ3ZzNkRIcXNFN0QyMiIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmNsYXNzIiwiZGVsZXRlOmNsYXNzcm9vbSIsImRlbGV0ZTppbnN0cnVjdG9yIiwiZGVsZXRlOmxlY3R1cmUiLCJnZXQ6Y2xhc3MiLCJnZXQ6Y2xhc3Nyb29tIiwiZ2V0Omluc3RydWN0b3IiLCJnZXQ6bGVjdHVyZSIsInBhdGNoOmNsYXNzIiwicGF0Y2g6Y2xhc3Nyb29tIiwicGF0Y2g6aW5zdHJ1Y3RvciIsInBhdGNoOmxlY3R1cmUiLCJwb3N0OmNsYXNzIiwicG9zdDpjbGFzc3Jvb20iLCJwb3N0Omluc3RydWN0b3IiLCJwb3N0OmxlY3R1cmUiXX0.gwP_AR5Sj2em143XKJPYWt52oaPfw2fENWEFirl_ReznHIfWlee-m588T8nGtqufFo9Larh_mXaIjCaZorr4wXEOvt-c5zCXLlt4GqktOA5zV4q3fWSpDK5SyLcUCWlv-rLg6F3L9hFVTQSSu9AaP1WgpygC7mSPDm_sQrb0nWxwtSFIXH-1O5Lgus88fkMnhohq32qVdRaXUinpMrv9GGCVia9YZoeTCmAuHjdFnhFjRxeih9_Kx7GR_RxOkhScW2H8_Yj7yatG53P7efyzXHOn_rKD3EGiBUYBXI7XLO0KMnEmvQ9JGSSHHcBAbKDWRByZLWfHqH_u0GQBrNjmtA",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlBzZmhtOVNweWZjbDE0czNBbDlERCJ9.eyJpc3MiOiJodHRwczovL2ZzbmRjcy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWViMTc1Mzg2YjY5YmMwYzEyZjczYjZjIiwiYXVkIjoiYm9va2luZyIsImlhdCI6MTU5NDMxMDQwNywiZXhwIjoxNTk0MzE3NjA3LCJhenAiOiJOVEJyaVFiRzhJc0Rja0xTaFJDZ3ZzNkRIcXNFN0QyMiIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmxlY3R1cmUiLCJnZXQ6YWxsbGVjdHVyZSIsImdldDpjbGFzc3Jvb20iLCJnZXQ6bGVjdHVyZSIsInBhdGNoOmxlY3R1cmUiLCJwb3N0OmxlY3R1cmUiXX0.wYqumwviSWm3XwtdwmD12KRV6lSCT7gQa1jpZWKXc2FvV2GcdXSBlAJsC2J4BrFChlT0jvwRkUnwXa66YofOB7XgThGK2gYKCTPJvjJZ_FJTle2q3zfMiNkQ93wBGjQCTcNAVUWxmZPLziluco0LvU5m4cQJi5ZjTWdotHX-dD6JlFZiTm56rtNNZ-hhxAKNFMvHfG5lVFoCSdTNDbbJLQLiDVQijCQzSvDirj8ERtBuhprm3VLh8J_KLvlrvMrSui3wK03Jzubw403gYmuKSJL7y28KQhAqoJKG0s5mAaLiDj9QikVzy2OXU06OoYRocFXAjBm3MFYPu7P8841eiw",
 							"type": "string"
 						}
 					]
@@ -380,7 +105,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"name\": \"Lessons on da geektings\",\n\t\"class_id\": 2,\n    \"classroom_id\": 1,\n\t\"start_time\": \"2020-09-22 11:10:25-07\",\n\t\"end_time\": \"2020-09-22 12:10:25-07\"\n}",
+					"raw": "{\n\t\"name\": \"Heart Anatomy 101\",\n\t\"class_id\": 3,\n    \"classroom_id\": 5,\n\t\"start_time\": \"2020-11-22 11:10:25-04\",\n\t\"end_time\": \"2020-11-22 12:10:25-04\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -388,7 +113,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:5000/lecture/3",
+					"raw": "http://localhost:5000/lecture/5",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -396,7 +121,7 @@
 					"port": "5000",
 					"path": [
 						"lecture",
-						"3"
+						"5"
 					]
 				}
 			},
@@ -410,7 +135,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlBzZmhtOVNweWZjbDE0czNBbDlERCJ9.eyJpc3MiOiJodHRwczovL2ZzbmRjcy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWViMTc1Mzg2YjY5YmMwYzEyZjczYjZjIiwiYXVkIjoiYm9va2luZyIsImlhdCI6MTU5MTg5NTkwOSwiZXhwIjoxNTkxOTAzMTA5LCJhenAiOiJOVEJyaVFiRzhJc0Rja0xTaFJDZ3ZzNkRIcXNFN0QyMiIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmNsYXNzIiwiZGVsZXRlOmNsYXNzcm9vbSIsImRlbGV0ZTpsZWN0dXJlIiwiZ2V0OmNsYXNzIiwiZ2V0OmNsYXNzcm9vbSIsImdldDpsZWN0dXJlIiwicGF0Y2g6Y2xhc3MiLCJwYXRjaDpjbGFzc3Jvb20iLCJwYXRjaDpsZWN0dXJlIiwicG9zdDpjbGFzcyIsInBvc3Q6Y2xhc3Nyb29tIiwicG9zdDpsZWN0dXJlIl19.HGBrS-YlkD4BjNNuku1GkK6p0Mh1CLwx9rkl1A5L--s68sAqf-NzplGis2hpEwQg6G_5H2DCrElrs_ZbCCnDBDpLlu4gidxK1p5fI1_ZtEWuF_tIml6YRwyneavIHR7ojT2Gna0RjXzMnAtazTzFUc69lv38AX4MfKGRJjGJl68iau-gERNM243JN8mpf-klOoDdwg4wx1vqblSYgd9d3QWUGK6BIyd_0kJ3BHkfPVZWZM9G22t5HmJjIzNzAkVI1EZUM_-KhJKoDe4z3Abq1CyOqsSX4DSGqxWLDs__UNgBKrL7Tf1mRQC4zULNyFMZF8EkW6ZMN32PSc2NND8j-g",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlBzZmhtOVNweWZjbDE0czNBbDlERCJ9.eyJpc3MiOiJodHRwczovL2ZzbmRjcy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWViMTc1Mzg2YjY5YmMwYzEyZjczYjZjIiwiYXVkIjoiYm9va2luZyIsImlhdCI6MTU5NDE2NDg4NCwiZXhwIjoxNTk0MTcyMDg0LCJhenAiOiJOVEJyaVFiRzhJc0Rja0xTaFJDZ3ZzNkRIcXNFN0QyMiIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmNsYXNzIiwiZGVsZXRlOmNsYXNzcm9vbSIsImRlbGV0ZTppbnN0cnVjdG9yIiwiZGVsZXRlOmxlY3R1cmUiLCJnZXQ6Y2xhc3MiLCJnZXQ6Y2xhc3Nyb29tIiwiZ2V0Omluc3RydWN0b3IiLCJnZXQ6bGVjdHVyZSIsInBhdGNoOmNsYXNzIiwicGF0Y2g6Y2xhc3Nyb29tIiwicGF0Y2g6aW5zdHJ1Y3RvciIsInBhdGNoOmxlY3R1cmUiLCJwb3N0OmNsYXNzIiwicG9zdDpjbGFzc3Jvb20iLCJwb3N0Omluc3RydWN0b3IiLCJwb3N0OmxlY3R1cmUiXX0.nt7kwRFkrQHh4xhK4TJ_6Ig8JYm3unYebJGIvuXGygeMmilzm5HIzzRspHcD_fA1WSp7npKsQpNktwY7mUl4qGQ5c4BZPBPSt7ZHkIcEb4e_Y_8Gnp2UfMisCx4JfaGSQAaxK3ojLroO9tgq9vlOHEEyWkwEwWJkeRDqTR3F3UUXmVR9iIOVnnmf-h3Sz4dkC1MYUQYeyETAx2V9mhwspZYqZDWgnObV0la1mFOz-5bWlBUDh_ja0tRLKYUZrFEvns6sRKOwX-C2L1hAEK_bk_eNTPC1xearxUdCQsHPsPJFRk5NNaxqZNHG9KBGOmOjC9tLzgQSf7M-vNKaZ_FWiw",
 							"type": "string"
 						}
 					]
@@ -418,7 +143,7 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:5000/lecture/4",
+					"raw": "http://localhost:5000/lecture/16",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -426,214 +151,7 @@
 					"port": "5000",
 					"path": [
 						"lecture",
-						"4"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get /Instructor",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlBzZmhtOVNweWZjbDE0czNBbDlERCJ9.eyJpc3MiOiJodHRwczovL2ZzbmRjcy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWViMTc1Mzg2YjY5YmMwYzEyZjczYjZjIiwiYXVkIjoiYm9va2luZyIsImlhdCI6MTU5MjMzNDI4OSwiZXhwIjoxNTkyMzQxNDg5LCJhenAiOiJOVEJyaVFiRzhJc0Rja0xTaFJDZ3ZzNkRIcXNFN0QyMiIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmNsYXNzIiwiZGVsZXRlOmNsYXNzcm9vbSIsImRlbGV0ZTppbnN0cnVjdG9yIiwiZGVsZXRlOmxlY3R1cmUiLCJnZXQ6Y2xhc3MiLCJnZXQ6Y2xhc3Nyb29tIiwiZ2V0Omluc3RydWN0b3IiLCJnZXQ6bGVjdHVyZSIsInBhdGNoOmNsYXNzIiwicGF0Y2g6Y2xhc3Nyb29tIiwicGF0Y2g6aW5zdHJ1Y3RvciIsInBhdGNoOmxlY3R1cmUiLCJwb3N0OmNsYXNzIiwicG9zdDpjbGFzc3Jvb20iLCJwb3N0Omluc3RydWN0b3IiLCJwb3N0OmxlY3R1cmUiXX0.gwP_AR5Sj2em143XKJPYWt52oaPfw2fENWEFirl_ReznHIfWlee-m588T8nGtqufFo9Larh_mXaIjCaZorr4wXEOvt-c5zCXLlt4GqktOA5zV4q3fWSpDK5SyLcUCWlv-rLg6F3L9hFVTQSSu9AaP1WgpygC7mSPDm_sQrb0nWxwtSFIXH-1O5Lgus88fkMnhohq32qVdRaXUinpMrv9GGCVia9YZoeTCmAuHjdFnhFjRxeih9_Kx7GR_RxOkhScW2H8_Yj7yatG53P7efyzXHOn_rKD3EGiBUYBXI7XLO0KMnEmvQ9JGSSHHcBAbKDWRByZLWfHqH_u0GQBrNjmtA",
-							"type": "string"
-						}
-					]
-				},
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:5000/instructor",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "5000",
-					"path": [
-						"instructor"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Post /Instructor",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlBzZmhtOVNweWZjbDE0czNBbDlERCJ9.eyJpc3MiOiJodHRwczovL2ZzbmRjcy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWViMTc1Mzg2YjY5YmMwYzEyZjczYjZjIiwiYXVkIjoiYm9va2luZyIsImlhdCI6MTU5MzAwNzMzOCwiZXhwIjoxNTkzMDE0NTM4LCJhenAiOiJOVEJyaVFiRzhJc0Rja0xTaFJDZ3ZzNkRIcXNFN0QyMiIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmNsYXNzIiwiZGVsZXRlOmNsYXNzcm9vbSIsImRlbGV0ZTppbnN0cnVjdG9yIiwiZGVsZXRlOmxlY3R1cmUiLCJnZXQ6Y2xhc3MiLCJnZXQ6Y2xhc3Nyb29tIiwiZ2V0Omluc3RydWN0b3IiLCJnZXQ6bGVjdHVyZSIsInBhdGNoOmNsYXNzIiwicGF0Y2g6Y2xhc3Nyb29tIiwicGF0Y2g6aW5zdHJ1Y3RvciIsInBhdGNoOmxlY3R1cmUiLCJwb3N0OmNsYXNzIiwicG9zdDpjbGFzc3Jvb20iLCJwb3N0Omluc3RydWN0b3IiLCJwb3N0OmxlY3R1cmUiXX0.rqU4DIh80DiVSNl_lweqarclL79fDv6p3B0PV7oK-iZn58o4v1mSZfYGeetCChiE2F99iYwIGIB9f3ymjCXYZ1Y-HA4dUvTWrFebCajxq6KdRdQhxbldUjfqGHeygEQY52zWLr2n4-GI4H5eUpTZYf84ZZbm5YWxVJ9NqDUY34Xm2BaPufE-PUOqUSCl-4PTHgYqgVAEjarV9XVgY2Om2b1-AA3OHRmBiclrSuvkrH2W-ZRnj83osKCG5m_R6DIEw8Chlzrfxwxi39YpbMh5P6KC_uHBovfFFr6jFZQrCmneyNNXSRwp-d5590KNp5jnCx1l210nNdT0fM4pm_31bw",
-							"type": "string"
-						}
-					]
-				},
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n\t\"name\": \"Harisson Conrad\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:5000/instructor/add",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "5000",
-					"path": [
-						"instructor",
-						"add"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get /Classroom",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlBzZmhtOVNweWZjbDE0czNBbDlERCJ9.eyJpc3MiOiJodHRwczovL2ZzbmRjcy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWViMTc1Mzg2YjY5YmMwYzEyZjczYjZjIiwiYXVkIjoiYm9va2luZyIsImlhdCI6MTU5NDEzMTExOCwiZXhwIjoxNTk0MTM4MzE4LCJhenAiOiJOVEJyaVFiRzhJc0Rja0xTaFJDZ3ZzNkRIcXNFN0QyMiIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmNsYXNzIiwiZGVsZXRlOmNsYXNzcm9vbSIsImRlbGV0ZTppbnN0cnVjdG9yIiwiZGVsZXRlOmxlY3R1cmUiLCJnZXQ6Y2xhc3MiLCJnZXQ6Y2xhc3Nyb29tIiwiZ2V0Omluc3RydWN0b3IiLCJnZXQ6bGVjdHVyZSIsInBhdGNoOmNsYXNzIiwicGF0Y2g6Y2xhc3Nyb29tIiwicGF0Y2g6aW5zdHJ1Y3RvciIsInBhdGNoOmxlY3R1cmUiLCJwb3N0OmNsYXNzIiwicG9zdDpjbGFzc3Jvb20iLCJwb3N0Omluc3RydWN0b3IiLCJwb3N0OmxlY3R1cmUiXX0.hH0I2O87PTLp-au5KcJ3hHI3H41oiiVDu0L-kEz_MUYQt07KkNE6fqeKZ7zFWqGn9QgwPfVqJitdin6jM7RyXqm4ds6yQsAJOeUivXmw5txME0LlFO4XpSLhqaSEtrHwWwq_r6AGUdYq2963hWe-Fo6mXhWSlDuU2-ZUSRwod6dA-2U9Tc1f2xfeijX6L6aP71z9j0Tjmeyl_W5JLIlhXzO8BMH8fCEqPxQK-8-hDwD_hpr44srtVC9cX8pkgpo1hJaWCanwtWDW4KLmEnl1hiOTljwrdS4hogiOgYxvRo2XmITel4LWD80GKphlhBKUDXnKSOCB0xgTZGaDrS0Ixg",
-							"type": "string"
-						}
-					]
-				},
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:5000/classroom",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "5000",
-					"path": [
-						"classroom"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Post /Classroom",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlBzZmhtOVNweWZjbDE0czNBbDlERCJ9.eyJpc3MiOiJodHRwczovL2ZzbmRjcy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWViMTc1Mzg2YjY5YmMwYzEyZjczYjZjIiwiYXVkIjoiYm9va2luZyIsImlhdCI6MTU5MzY5ODc5NywiZXhwIjoxNTkzNzA1OTk3LCJhenAiOiJOVEJyaVFiRzhJc0Rja0xTaFJDZ3ZzNkRIcXNFN0QyMiIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmNsYXNzIiwiZGVsZXRlOmNsYXNzcm9vbSIsImRlbGV0ZTppbnN0cnVjdG9yIiwiZGVsZXRlOmxlY3R1cmUiLCJnZXQ6Y2xhc3MiLCJnZXQ6Y2xhc3Nyb29tIiwiZ2V0Omluc3RydWN0b3IiLCJnZXQ6bGVjdHVyZSIsInBhdGNoOmNsYXNzIiwicGF0Y2g6Y2xhc3Nyb29tIiwicGF0Y2g6aW5zdHJ1Y3RvciIsInBhdGNoOmxlY3R1cmUiLCJwb3N0OmNsYXNzIiwicG9zdDpjbGFzc3Jvb20iLCJwb3N0Omluc3RydWN0b3IiLCJwb3N0OmxlY3R1cmUiXX0.oBpVGbfxBvWslg5rYcVZOKqdPB7WDbRcXVTQBmeaLpVNRYL3ynWRZMXBU5SNDAb8qzDO-GDiAbd6-s8Acqqx6_63oeJXrNh6rs9OhaDm3UleRxUD5xi9vKDW5VyYQYd33--7NLuBM-AR4YJG8wAR9S0902UhkZNhovxzVMSq9S4F_rj14zjU2TbvHsqUWZQVAE6BYRpuL739f23zqnE15c-eyv2tct8UUYWfB0Uix4ylr9EXQaDhe9iR7ZPgp73G_I_HmJth__RGFw-tGSRKIZuspEHToiQEb69QSrznWYmUKx4qi-EYwnPSM0Gi9nfrFHXYPRlDR7GIsMzYLaaACw",
-							"type": "string"
-						}
-					]
-				},
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"name\": \"OF203\",\n    \"building\": \"The Office\",\n    \"floor\": \"B\",\n    \"occupancy\": 3\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:5000/classroom/add",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "5000",
-					"path": [
-						"classroom",
-						"add"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "POST /ClassroomHours",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlBzZmhtOVNweWZjbDE0czNBbDlERCJ9.eyJpc3MiOiJodHRwczovL2ZzbmRjcy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWViMTc1Mzg2YjY5YmMwYzEyZjczYjZjIiwiYXVkIjoiYm9va2luZyIsImlhdCI6MTU5MzcyMDU2NiwiZXhwIjoxNTkzNzI3NzY2LCJhenAiOiJOVEJyaVFiRzhJc0Rja0xTaFJDZ3ZzNkRIcXNFN0QyMiIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmNsYXNzIiwiZGVsZXRlOmNsYXNzcm9vbSIsImRlbGV0ZTppbnN0cnVjdG9yIiwiZGVsZXRlOmxlY3R1cmUiLCJnZXQ6Y2xhc3MiLCJnZXQ6Y2xhc3Nyb29tIiwiZ2V0Omluc3RydWN0b3IiLCJnZXQ6bGVjdHVyZSIsInBhdGNoOmNsYXNzIiwicGF0Y2g6Y2xhc3Nyb29tIiwicGF0Y2g6aW5zdHJ1Y3RvciIsInBhdGNoOmxlY3R1cmUiLCJwb3N0OmNsYXNzIiwicG9zdDpjbGFzc3Jvb20iLCJwb3N0Omluc3RydWN0b3IiLCJwb3N0OmxlY3R1cmUiXX0.aOviCHvFyFKEaL989XTEWGKGCSxLLnVZNRlVSm_UjD2X6-8G_1SRscigQ5Ym8Yf40tGs63Ol7k5ukhuRThB4f9wNPIFHlJwDPf0qfa1eSZf8Xo6LFfTC7BfAYFfj5qc7vtB0veY2VM5RQ3PPeofFfWH9cZongTEuaAqG154D1uLCrJBbOF89t4HnNW47fB_pii-1r_BfBOgetECN3EzD5iecTXHCvAK8MzC8QlQfnwVrzcP8xiuHe5bau8UBtlociM514v1YFvLR_1IoSKjqQLi5sWg5zgpaTe4o_gkuhSXM1ZUwpfcclSrdPfIZZjaeRY-IMWzkMQ_TBeqS95nnyg",
-							"type": "string"
-						}
-					]
-				},
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"day\": \"0\",\n    \"open_time\": 8,\n    \"close_time\": 17\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:5000/classroom/2/hours",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "5000",
-					"path": [
-						"classroom",
-						"2",
-						"hours"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "GET /ClassroomHours",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlBzZmhtOVNweWZjbDE0czNBbDlERCJ9.eyJpc3MiOiJodHRwczovL2ZzbmRjcy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWViMTc1Mzg2YjY5YmMwYzEyZjczYjZjIiwiYXVkIjoiYm9va2luZyIsImlhdCI6MTU5NDEzMTExOCwiZXhwIjoxNTk0MTM4MzE4LCJhenAiOiJOVEJyaVFiRzhJc0Rja0xTaFJDZ3ZzNkRIcXNFN0QyMiIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmNsYXNzIiwiZGVsZXRlOmNsYXNzcm9vbSIsImRlbGV0ZTppbnN0cnVjdG9yIiwiZGVsZXRlOmxlY3R1cmUiLCJnZXQ6Y2xhc3MiLCJnZXQ6Y2xhc3Nyb29tIiwiZ2V0Omluc3RydWN0b3IiLCJnZXQ6bGVjdHVyZSIsInBhdGNoOmNsYXNzIiwicGF0Y2g6Y2xhc3Nyb29tIiwicGF0Y2g6aW5zdHJ1Y3RvciIsInBhdGNoOmxlY3R1cmUiLCJwb3N0OmNsYXNzIiwicG9zdDpjbGFzc3Jvb20iLCJwb3N0Omluc3RydWN0b3IiLCJwb3N0OmxlY3R1cmUiXX0.hH0I2O87PTLp-au5KcJ3hHI3H41oiiVDu0L-kEz_MUYQt07KkNE6fqeKZ7zFWqGn9QgwPfVqJitdin6jM7RyXqm4ds6yQsAJOeUivXmw5txME0LlFO4XpSLhqaSEtrHwWwq_r6AGUdYq2963hWe-Fo6mXhWSlDuU2-ZUSRwod6dA-2U9Tc1f2xfeijX6L6aP71z9j0Tjmeyl_W5JLIlhXzO8BMH8fCEqPxQK-8-hDwD_hpr44srtVC9cX8pkgpo1hJaWCanwtWDW4KLmEnl1hiOTljwrdS4hogiOgYxvRo2XmITel4LWD80GKphlhBKUDXnKSOCB0xgTZGaDrS0Ixg",
-							"type": "string"
-						}
-					]
-				},
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:5000/classroom/4/hours",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "5000",
-					"path": [
-						"classroom",
-						"4",
-						"hours"
+						"16"
 					]
 				}
 			},
@@ -641,25 +159,22 @@
 		},
 		{
 			"name": "GET /Search Classrooms",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
 			"request": {
 				"auth": {
 					"type": "bearer",
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlBzZmhtOVNweWZjbDE0czNBbDlERCJ9.eyJpc3MiOiJodHRwczovL2ZzbmRjcy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWViMTc1Mzg2YjY5YmMwYzEyZjczYjZjIiwiYXVkIjoiYm9va2luZyIsImlhdCI6MTU5NDEzMTExOCwiZXhwIjoxNTk0MTM4MzE4LCJhenAiOiJOVEJyaVFiRzhJc0Rja0xTaFJDZ3ZzNkRIcXNFN0QyMiIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmNsYXNzIiwiZGVsZXRlOmNsYXNzcm9vbSIsImRlbGV0ZTppbnN0cnVjdG9yIiwiZGVsZXRlOmxlY3R1cmUiLCJnZXQ6Y2xhc3MiLCJnZXQ6Y2xhc3Nyb29tIiwiZ2V0Omluc3RydWN0b3IiLCJnZXQ6bGVjdHVyZSIsInBhdGNoOmNsYXNzIiwicGF0Y2g6Y2xhc3Nyb29tIiwicGF0Y2g6aW5zdHJ1Y3RvciIsInBhdGNoOmxlY3R1cmUiLCJwb3N0OmNsYXNzIiwicG9zdDpjbGFzc3Jvb20iLCJwb3N0Omluc3RydWN0b3IiLCJwb3N0OmxlY3R1cmUiXX0.hH0I2O87PTLp-au5KcJ3hHI3H41oiiVDu0L-kEz_MUYQt07KkNE6fqeKZ7zFWqGn9QgwPfVqJitdin6jM7RyXqm4ds6yQsAJOeUivXmw5txME0LlFO4XpSLhqaSEtrHwWwq_r6AGUdYq2963hWe-Fo6mXhWSlDuU2-ZUSRwod6dA-2U9Tc1f2xfeijX6L6aP71z9j0Tjmeyl_W5JLIlhXzO8BMH8fCEqPxQK-8-hDwD_hpr44srtVC9cX8pkgpo1hJaWCanwtWDW4KLmEnl1hiOTljwrdS4hogiOgYxvRo2XmITel4LWD80GKphlhBKUDXnKSOCB0xgTZGaDrS0Ixg",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlBzZmhtOVNweWZjbDE0czNBbDlERCJ9.eyJpc3MiOiJodHRwczovL2ZzbmRjcy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWVjMTQxOWU0MGZhNTYwYzc1NjQ1MzQ1IiwiYXVkIjoiYm9va2luZyIsImlhdCI6MTU5NDMxMDc3MSwiZXhwIjoxNTk0MzE3OTcxLCJhenAiOiJOVEJyaVFiRzhJc0Rja0xTaFJDZ3ZzNkRIcXNFN0QyMiIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmxlY3R1cmUiLCJnZXQ6Y2xhc3Nyb29tIiwiZ2V0OmxlY3R1cmUiLCJwYXRjaDpsZWN0dXJlIiwicG9zdDpsZWN0dXJlIl19.jDLTghftT96BthsNFZwhhBe8Y451RvFzrjijvTwk8Gae-2bSIBXJ4Hccq09J8SO8Ny8lp63s8bJFJAkX7St84vNmT2v4xLeSNGN4wB-Q8HdclC5-xhObRMq10GC3CxlEsubtyuo1C6oqIOjJ8DTrj-oG0iYr4yb6usEL8gxQ3EMqQzG4ae3diMMHfI6ai_RJsOe3skSZF0f8_pikTlWVnP0KSeootMzjmcDf2lB9x7Vh6hcPU9cMJ0vVtUeC9-oW5NREyx9mvKOmWeJMfYNbyYPfIr44raFNIsuh46rhz74SNa22n_sKZc2Whnm1fzw_0REdGVNW0Z6dBX-mqU1aIg",
 							"type": "string"
 						}
 					]
 				},
-				"method": "GET",
+				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"date\": \"2020-06-10\",\n    \"occupancy\": 80\n}",
+					"raw": "{\n    \"date\": \"2020-06-10\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -675,6 +190,37 @@
 					"port": "5000",
 					"path": [
 						"search"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /Instructor/<id>/Lecture",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlBzZmhtOVNweWZjbDE0czNBbDlERCJ9.eyJpc3MiOiJodHRwczovL2ZzbmRjcy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWViMTc1Mzg2YjY5YmMwYzEyZjczYjZjIiwiYXVkIjoiYm9va2luZyIsImlhdCI6MTU5NDE2NDg4NCwiZXhwIjoxNTk0MTcyMDg0LCJhenAiOiJOVEJyaVFiRzhJc0Rja0xTaFJDZ3ZzNkRIcXNFN0QyMiIsInNjb3BlIjoiIiwicGVybWlzc2lvbnMiOlsiZGVsZXRlOmNsYXNzIiwiZGVsZXRlOmNsYXNzcm9vbSIsImRlbGV0ZTppbnN0cnVjdG9yIiwiZGVsZXRlOmxlY3R1cmUiLCJnZXQ6Y2xhc3MiLCJnZXQ6Y2xhc3Nyb29tIiwiZ2V0Omluc3RydWN0b3IiLCJnZXQ6bGVjdHVyZSIsInBhdGNoOmNsYXNzIiwicGF0Y2g6Y2xhc3Nyb29tIiwicGF0Y2g6aW5zdHJ1Y3RvciIsInBhdGNoOmxlY3R1cmUiLCJwb3N0OmNsYXNzIiwicG9zdDpjbGFzc3Jvb20iLCJwb3N0Omluc3RydWN0b3IiLCJwb3N0OmxlY3R1cmUiXX0.nt7kwRFkrQHh4xhK4TJ_6Ig8JYm3unYebJGIvuXGygeMmilzm5HIzzRspHcD_fA1WSp7npKsQpNktwY7mUl4qGQ5c4BZPBPSt7ZHkIcEb4e_Y_8Gnp2UfMisCx4JfaGSQAaxK3ojLroO9tgq9vlOHEEyWkwEwWJkeRDqTR3F3UUXmVR9iIOVnnmf-h3Sz4dkC1MYUQYeyETAx2V9mhwspZYqZDWgnObV0la1mFOz-5bWlBUDh_ja0tRLKYUZrFEvns6sRKOwX-C2L1hAEK_bk_eNTPC1xearxUdCQsHPsPJFRk5NNaxqZNHG9KBGOmOjC9tLzgQSf7M-vNKaZ_FWiw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/instructor/1/lecture",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"instructor",
+						"1",
+						"lecture"
 					]
 				}
 			},
