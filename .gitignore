@@ -3,3 +3,4 @@ env
 __pycache__
 alembic.ini
 .DS_Store
+unused_endpoints.py

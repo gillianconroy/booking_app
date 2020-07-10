@@ -107,10 +107,10 @@ To set up Auth0 from scratch, follow the below instructions:
 INTRODUCTION
 This Class Scheduler API is an interactive booking app that is created for Instructors and Faculty to better utilize classroom time slots by booking lectures in classrooms. This capstone project is part of the Full Stack Nanodegree Program designed by Udacity. The API is organized around REST. The API has resource-oriented URLs, accepts JSON request bodies, returns JSON-encoded responses, and uses standard HTTP response codes and verbs. It interacts with the database, and performs basic CRUD operations to manipulate the data. It also utilizes JWT to check for authentication permissions to access the endpoints.
 
-To use this API, the user can run this on their local server, and it has been tested and deployed to run on Heroku. This API can be scaled to fit your needs. A portion of the app has already been built for essential end points, which are not included in this project, however, this project clearly utilizes the endpoints necessary to perform the booking of lectures necessary for the project. ```@TODO``` 
+To use this API, the user can run this on their local server, and it has been tested and deployed to run on Heroku. This API can be scaled to fit your needs. A portion of the app has already been built for essential end points, which are not included in this project, however, this project clearly utilizes the endpoints necessary to perform the booking of lectures necessary for the project.
 
 GETTING STARTED
-Base URL: Currently, this app's backend server can only be run on your local machine and not hosted as a base URL. By default, it can be run at http://127.0.0.1:5000/ or http://localhost:5000/. The frontend server is running on port:3000. See `./frontend/README.md`
+Base URL: If you pull the repo and run it on your local machine, it can be run at http://127.0.0.1:5000/ or http://localhost:5000/. It is also hosted live on Heroku https://class-scheduler-booking-app.herokuapp.com/. The base URL will not return much, so you must specify one of the resources listed below in order to return useful data.
 
 API Keys/Authentication: Authentication is set up using a third-party authentication service, Auth0. Users permissions and roles are set up using the Auth0 interface, and the user accesses the JWT by the Auth0 login page. The endpoints take JWT permissions set up in Auth0, and authenticate the various endpoints. We chose to implement authorization and authentication using JWT via Auth0 rather than API keys.
 
@@ -138,7 +138,6 @@ ENDPOINT LIBRARY:
 List of Endpoints:
 GET '/lecture'
 GET '/instructor/<instructor_id>/lecture'
-<!-- GET '/classroom' -->
 POST '/search'
 POST '/lecture/add'
 PATCH '/lecture/<lecture_id>'
@@ -223,44 +222,6 @@ Sample response body:
     "success": true
 }
 
-
-<!-- GET '/classroom'
-- Fetches all classrooms.
-- Request: Arguments: None. 
-- Authentication: JWT Bearer Token. Required permission: 'get:classroom'
-Sample request:
-http://localhost:5000/classroom -->
-
-<!-- - Returns: 
-An array of objects, with a single key, classroom, formatted as key:value pairs.
-A count of the total number of classrooms, and a success message is returned, indicating everything worked as expected.
-Sample response body:
-{
-    "classrooms": [
-        {
-            "building": "Daniels",
-            "created_date": "Thu, 18 Jun 2020 17:51:57 GMT",
-            "floor": "4",
-            "id": 1,
-            "modified_date": "Thu, 18 Jun 2020 17:51:57 GMT",
-            "name": "DLS427",
-            "occupancy": 200
-        },
-        {
-            "building": "Daniels",
-            "created_date": "Tue, 07 Jul 2020 13:42:31 GMT",
-            "floor": "2",
-            "id": 5,
-            "modified_date": "Tue, 07 Jul 2020 13:42:33 GMT",
-            "name": "DLS212",
-            "occupancy": 80
-        }
-    ],
-    "num_classrooms": 5,
-    "success": true
-} -->
-
-
 POST '/search'
 - Search for available classrooms to book a lecture on a date string and occupancy maximum as an integer. If successful, results will be returned with available classrooms and current bookings.
 - Request: Arguments(required): Send a JSON object with key:value pairs of keys: date, and occupancy. 
@@ -298,7 +259,6 @@ Sample request body:
     "success": true
 }
 
-
 POST '/lecture/add'
 - Post a new lecture to the database
 - Request: Arguments(required): Send a JSON object with key:value pairs of name, class_id, classroom_id, start_time (timestamp with timezone), end_time (timestamp with timezone).
@@ -327,7 +287,7 @@ Sample Request body:
         }
     ],
     "success": true,
-    "total_num_lecture": 12
+    "num_lectures": 12
 }
 
 
@@ -342,7 +302,7 @@ Sample Request body:
 {
 	"name": "Heart Anatomy 101",
 	"class_id": 3,
-  "classroom_id": 5,
+    "classroom_id": 5,
 	"start_time": "2020-11-22 11:10:25-04",
 	"end_time": "2020-11-22 12:10:25-04"
 }
@@ -373,12 +333,12 @@ DELETE '/lecture/<lecture_id>'
 {
     "deleted_lecture": 16,
     "success": true,
-    "total_num_lecture": 11
+    "num_lectures": 11
 }
 
 
 ## Testing
-To run the tests, using `test_app.py`, import your current JWT Bearer Token into the setup.sh file. Then from terminal, run: 
+To run the tests, using `test_app.py`, import your current JWT Bearer Token into the setup.sh file. Then in the backend directory, from terminal, run: 
 ```
 source setup.sh
 dropdb class_scheduler_test
