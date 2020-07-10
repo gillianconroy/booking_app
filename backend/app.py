@@ -11,11 +11,11 @@ from datetime import datetime, timezone, time
 import calendar
 
 from os import path
-# log_file_path = path.join(path.dirname(path.abspath(__file__)), 'log.config')
-# logging.config.fileConfig(log_file_path)
+log_file_path = path.join(path.dirname(path.abspath(__file__)), 'log.config')
+logging.fileConfig(log_file_path)
 
-FORMAT = '%(asctime)-15s %(clientip)s %(user)-8s %(message)s'
-logging.basicConfig(format=FORMAT)
+# FORMAT = '%(asctime)-15s %(clientip)s %(user)-8s %(message)s'
+# logging.basicConfig(format=FORMAT)
 
 import json
 
