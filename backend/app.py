@@ -5,17 +5,24 @@ from sqlalchemy import exc, func
 from flask_cors import CORS
 from models import setup_db
 
-import logging
-from logging import Formatter, FileHandler
 from datetime import datetime, timezone, time
 import calendar
 
-from os import path
-log_file_path = path.join(path.dirname(path.abspath(__file__)), 'log.config')
-logging.fileConfig(log_file_path)
+import logging
+import logging.config
+from logging import Formatter, FileHandler
 
-# FORMAT = '%(asctime)-15s %(clientip)s %(user)-8s %(message)s'
-# logging.basicConfig(format=FORMAT)
+logging.config.fileConfig('logging.conf')
+
+# create logger
+logger = logging.getLogger('simpleExample')
+
+# 'application' code
+logger.debug('debug message')
+logger.info('info message')
+logger.warning('warn message')
+logger.error('error message')
+logger.critical('critical message')
 
 import json
 
@@ -616,15 +623,15 @@ def create_app(test_config=None):
             "message": AuthError.error['description']
         }), AuthError.status_code
 
-    if not app.debug:
-        file_handler = FileHandler('error.log')
-        file_handler.setFormatter(
-            Formatter('%(asctime)s %(levelname)s: %(message)s [in %(pathname)s:%(lineno)d]')
-        )
-        app.logger.setLevel(logging.INFO)
-        file_handler.setLevel(logging.INFO)
-        app.logger.addHandler(file_handler)
-        app.logger.info('errors')
+    # if not app.debug:
+    #     file_handler = FileHandler('error.log')
+    #     file_handler.setFormatter(
+    #         Formatter('%(asctime)s %(levelname)s: %(message)s [in %(pathname)s:%(lineno)d]')
+    #     )
+    #     app.logger.setLevel(logging.INFO)
+    #     file_handler.setLevel(logging.INFO)
+    #     app.logger.addHandler(file_handler)
+    #     app.logger.info('errors')
 
     return app
 
